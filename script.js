@@ -80,7 +80,7 @@
             ctx.fillRect(bot_box.x,bot_box.y,box.w,box.h)
     }
     function bot_logik(){
-        if(ball_data.y>(centerY+(centerY/1.5))){
+        if(ball_data.y>(centerY+(centerY/1.2))){
             // если шарик далеко
             bot_box.wait_count++;
             if((bot_box.wait_count%20)==0){
