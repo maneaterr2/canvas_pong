@@ -274,9 +274,9 @@
                 break;
             case 13:
                 
-                if(show_score_status){
+                
                     new_game()
-                }
+                
                
                 break;
         }
