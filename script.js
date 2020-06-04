@@ -24,17 +24,23 @@
     }
     function score_status(){
         ctx.font = "100px Arial";
-        ctx.fillStyle = "#444444";
+        ctx.fillStyle = "#141414";
+        ctx.strokeStyle = "#1b1b1b"
+        ctx.lineWidth = 2;
         ctx.textAlign = "center";
         let text2 = "Ваши очки: "+ score;
         ctx.fillText(text2, centerX, centerY);
+        ctx.strokeText(text2, centerX, centerY);
     }
     function new_game(){
         show_score_status = false;
         ball_data.x = centerX;
         ball_data.y = centerY;
         ball_data.move = "bottom";
-        ball_data.move_x = 0;
+        function getRandomArbitrary(min, max) {
+            return Math.random() * (max - min) + min;
+          }
+        ball_data.move_x = getRandomArbitrary(-3,3);
         score = 0;
     }
    
@@ -84,9 +90,18 @@
         ctx.beginPath();
         ctx.fillStyle = ball_data.c;
         if(ball_data.move=="bottom"){
-            ball_data.y +=10;
+            if(score>10){
+                ball_data.y +=(10+ (score/3));
+            }else{
+                ball_data.y +=10;
+            }
+            
         }else{
-            ball_data.y-=10;
+            if(score>10){
+                ball_data.y -=(10+ (score/3));
+            }else{
+                ball_data.y -=10;
+            }
         }
         if(ball_data.move_x!==0){
             ball_data.x += ball_data.move_x
