@@ -27,12 +27,12 @@
         ctx.fillText("Жми enter чтобы начать", centerX, (centerY-50));
     }
     function score_status(){
-        ctx.font = "100px Arial";
+        ctx.font = "50px Arial";
         ctx.fillStyle = "#141414";
         ctx.strokeStyle = "#1b1b1b"
         ctx.lineWidth = 2;
         ctx.textAlign = "center";
-        let text2 = "Ваши очки: "+ score;
+        let text2 = "если багануло, нажми enter";
         ctx.fillText(text2, centerX, centerY);
         ctx.strokeText(text2, centerX, centerY);
     }
@@ -241,7 +241,7 @@
         draw_box();
         // ball()
         if(!show_score_status){
-            // score_status();
+            score_status();
             ball_move();
             bot_logik();
         }else{
@@ -274,7 +274,7 @@
                 break;
             case 13:
                 
-                
+               
                     new_game()
                 
                
