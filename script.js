@@ -22,6 +22,13 @@
         let text2 = "Ваши очки: "+ score;
         ctx.fillText(text2, centerX, centerY);
     }
+    function score_status(){
+        ctx.font = "100px Arial";
+        ctx.fillStyle = "#444444";
+        ctx.textAlign = "center";
+        let text2 = "Ваши очки: "+ score;
+        ctx.fillText(text2, centerX, centerY);
+    }
     function new_game(){
         show_score_status = false;
         ball_data.x = centerX;
@@ -133,7 +140,8 @@
         draw_box();
         // ball()
         if(!show_score_status){
-            ball_move()
+            score_status();
+            ball_move();
         }else{
             end_game()
         }
